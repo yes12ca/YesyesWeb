@@ -1,0 +1,162 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+   body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(  #3af2ff 0%, #f9c7d8 50%, #33e3fa 100%);
+            min-height: 100vh;
+            color: #1e293b;
+            padding: 20px 15px;
+        }
+            
+
+.form-container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+form fieldset {
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 30px 28px;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+        }
+
+   h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 24px;
+            text-align: center;
+            background: linear-gradient(to right, #f8a5d0, #c8088b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }  
+.form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label.field-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #334155;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            border: 1.5px solid #e1cbdf;
+            border-radius: 10px;
+            background-color: #f8fafc;
+            color: #0f172a;
+            transition: all 0.25s ease;
+            outline: none;
+            font-family: inherit;
+        }
+input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="date"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #3b82f6;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+        }
+
+textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+.options-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .option-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #f1f5f9;
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #475569;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+input[type="radio"],
+        input[type="checkbox"] {
+            width: 17px;
+            height: 17px;
+            accent-color: #2563eb;
+            cursor: pointer;
+        }
+.button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+            padding-top: 16px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+button[type="submit"] {
+            flex: 2;
+            background: linear-gradient(135deg, #ffc0da, #f755d4);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+button[type="submit"]:hover {
+            background: linear-gradient(135deg, #7bb9f8, #2a64ba);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(185, 28, 13, 0.35);
+        }
+
+        input[type="reset"] {
+            flex: 1;
+            background-color: #f1f5f9;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #ec5358;
+            color: #000000;
+        }
