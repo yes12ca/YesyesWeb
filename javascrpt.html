@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        /* 1. Mengatur seluruh halaman agar elemen berada di tengah */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center; /* Posisi horizontal di tengah */
+            align-items: center;     /* Posisi vertikal di tengah */
+            min-height: 100vh;       /* Tinggi penuh layar browser */
+            margin: 0;
+            background: radial-gradient(rgb(10, 118, 242),rgb(168, 216, 255));
+            background-color: #9cd2ff;
+        }
+
+        /* 2. Styling kotak form/kalkulator */
+        form {
+            background-color: #fafafa;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        /* Styling label dan input */
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ffb8e6;
+            border-radius: 6px;
+            box-sizing: border-box; /* Agar padding tidak merusak lebar input */
+            font-size: 16px;
+        }
+
+        /* Container khusus tombol agar tersusun rapi secara horizontal */
+        .button-group {
+            display: flex;
+            gap: 10px;            /* Jarak antar tombol */
+            margin-bottom: 15px;
+        }
+
+        /* 3. Mengubah Style Button */
+        button {
+            flex: 1;               /* Membuat semua tombol berukuran sama */
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(250, 249, 249);
+            background-color: #ff89be; /* Warna hijau */
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        /* Efek saat tombol di-hover (diarahkan kursor) */
+        button:hover {
+            background-color: #348cff ;
+        }
+
+        /* Efek saat tombol diklik */
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <form name="formhitung">
+        <label for="bil1">Input Bilangan 1</label>
+        <input type="number" name="bil1" id="bil1"><br><br>
+
+        <label for="bil2">Input Bilangan 2</label>
+        <input type="number" name="bil2" id="bil2"><br><br>
+
+        <!-- Tombol Operasi Aritmatika -->
+        <button type="button" onclick="hitung('+')">+</button>
+        <button type="button" onclick="hitung('-')">-</button>
+        <button type="button" onclick="hitung('*')">x</button>
+        <button type="button" onclick="hitung('/')">/</button>
+
+        <br><br>
+
+        <label for="output">Output</label>
+        <input type="text" name="output" id="output" readonly>
+    </form>
+
+    <script>
+        function hitung(operator) {
+            // Mengambil nilai input dan mengubahnya dari string ke angka
+            let angka1 = parseFloat(document.formhitung.bil1.value);
+            let angka2 = parseFloat(document.formhitung.bil2.value);
+            let hasil = 0;
+
+            // Validasi jika inputan kosong
+            if (isNaN(angka1) || isNaN(angka2)) {
+                alert("Harap masukkan kedua bilangan terlebih dahulu!");
+                return;
+            }
+
+            // Memproses operasi sesuai tombol yang ditekan
+            if (operator === '+') {
+                hasil = angka1 + angka2;
+            } else if (operator === '-') {
+                hasil = angka1 - angka2;
+            } else if (operator === '*') {
+                hasil = angka1 * angka2;
+            } else if (operator === '/') {
+                if (angka2 === 0) {
+                    alert("Pembagian dengan nol tidak diperbolehkan!");
+                    return;
+                }
+                hasil = angka1 / angka2;
+            }
+
+            // Menampilkan hasil ke input Output
+            document.formhitung.output.value = hasil;
+        }
+    </script>
+
+</body>
+</ht
